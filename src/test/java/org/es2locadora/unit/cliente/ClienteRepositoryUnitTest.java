@@ -39,8 +39,7 @@ public class ClienteRepositoryUnitTest {
 
     @AfterEach
     public void after() {
-        em.getTransaction().rollback();
-        // this.em.getTransaction().commit();
+        // em.getTransaction().rollback();
     }
 
     @AfterAll
@@ -49,22 +48,23 @@ public class ClienteRepositoryUnitTest {
     }
 
     @Test
-    public void naoDeveSalvarClienteComCPFJaExistente() {
-        
-    }
-
-    @Test
-    public void naoDeveSalvarClienteComEmailJaExistente() {
-
-    }
-
-    @Test
-    public void naoDeveSalvarClienteComCPFInvalido() {
-
-    }
-
     public void deveTrazerTodosOsClientes() {
         // List<Cliente> clientes = repo.getAll();
     }
+
+    @Test
+    public void naoDeveSalvarClienteComSemAtributoObrigatorio() {
+        Cliente cliente = new Cliente();
+        cliente.setNomeCliente("Jose");
+        cliente.setCpf("11111111111");
+        repo.create(cliente);
+        em.getTransaction().commit();
+    }
+
+
+    // tao mais pra teste de integração
+
+   
+
 
 }

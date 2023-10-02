@@ -4,6 +4,8 @@ import org.es2locadora.cliente.domain.Cliente;
 
 public interface ClienteRepository {
     // List<Cliente> getAll();
-    void salvar(Cliente cliente);
+    void create(Cliente cliente);
+
+    Cliente findByCpf(String cpf);
 
 }

@@ -13,8 +13,19 @@ public class ClienteRepositoryAdapter implements ClienteRepository {
     private final EntityManager em;
 
     @Override
-    public void salvar(Cliente cliente) {
+    public void create(Cliente cliente) {
         this.em.persist(cliente);
     }
+
+    @Override
+    public Cliente findByCpf(String cpf) {
+        return this.em.createQuery("from Cliente c where c.cpf = :cpf", Cliente.class)
+            .setParameter("cpf", cpf)
+            .getSingleResult();
+    }
+
+    // public void findById(Integer id) {
+    // this.em.find(Cliente.class, id);
+    // }
 
 }
