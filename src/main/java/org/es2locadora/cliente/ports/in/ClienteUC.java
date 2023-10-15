@@ -1,6 +1,6 @@
-package org.es2locadora.cliente.domain.ports.in;
+package org.es2locadora.cliente.ports.in;
 
-import org.es2locadora.cliente.domain.Cliente;
+import org.es2locadora.cliente.Cliente;
 
 public interface ClienteUC {
     Cliente buscarPorCpf(String cpf);

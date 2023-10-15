@@ -1,1 +1,0 @@
-INSERT INTO clientes (nome_cliente, email, cpf) VALUES ('Maria Silva', 'maria@example.com', '11111111111')

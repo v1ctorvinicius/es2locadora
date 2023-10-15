@@ -1,16 +1,22 @@
-package org.es2locadora.cliente.adapter.out;
+package org.es2locadora.cliente;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import org.es2locadora.cliente.domain.Cliente;
-import org.es2locadora.cliente.domain.ports.out.ClienteRepository;
+import org.es2locadora.cliente.ports.out.ClienteRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class ClienteRepositoryAdapter implements ClienteRepository {
-
+    
     private final EntityManager em;
+
+    @Override
+    public List<Cliente> getAll() {
+        return this.em.createQuery("from Cliente", Cliente.class).getResultList();
+    }
 
     @Override
     public void create(Cliente cliente) {
@@ -23,9 +29,5 @@ public class ClienteRepositoryAdapter implements ClienteRepository {
             .setParameter("cpf", cpf)
             .getSingleResult();
     }
-
-    // public void findById(Integer id) {
-    // this.em.find(Cliente.class, id);
-    // }
 
 }

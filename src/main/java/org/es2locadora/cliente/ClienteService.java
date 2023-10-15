@@ -1,7 +1,7 @@
-package org.es2locadora.cliente.domain;
+package org.es2locadora.cliente;
 
-import org.es2locadora.cliente.domain.ports.in.ClienteUC;
-import org.es2locadora.cliente.domain.ports.out.ClienteRepository;
+import org.es2locadora.cliente.ports.in.ClienteUC;
+import org.es2locadora.cliente.ports.out.ClienteRepository;
 
 import lombok.RequiredArgsConstructor;
 
