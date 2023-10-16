@@ -1,12 +1,12 @@
 package org.es2locadora.cliente;
 
-import org.es2locadora.cliente.ports.in.ClienteUC;
+import org.es2locadora.cliente.ports.in.ClienteUseCases;
 import org.es2locadora.cliente.ports.out.ClienteRepository;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class ClienteService implements ClienteUC {
+public class ClienteService implements ClienteUseCases {
 
     private final ClienteRepository repo;
 

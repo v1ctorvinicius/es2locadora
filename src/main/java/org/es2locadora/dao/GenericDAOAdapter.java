@@ -4,22 +4,20 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
+public class GenericDAOAdapter<T, ID extends Serializable> implements GenericDAO<T, ID> {
 
-public class GenericDAOImpl<T, ID extends Serializable> implements GenericDAO<T, ID> {
-
-    private final EntityManager em;
+    private final EntityManager manager;
     private final Class<T> entityClass;
 
-    public GenericDAOImpl(EntityManager em, Class<T> entityClass) {
-        this.em = em;
+    public GenericDAOAdapter(EntityManager em, Class<T> entityClass) {
+        this.manager = em;
         this.entityClass = entityClass;
     }
 
     @Override
     public List<T> findAll() {
-        return em.createQuery("from " + entityClass.getSimpleName(), entityClass).getResultList();
+        return manager.createQuery("from " + entityClass.getSimpleName(), entityClass).getResultList();
     }
 
     @Override
@@ -30,8 +28,7 @@ public class GenericDAOImpl<T, ID extends Serializable> implements GenericDAO<T,
 
     @Override
     public void save(T entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        manager.persist(entity);        
     }
 
     @Override
@@ -45,5 +42,5 @@ public class GenericDAOImpl<T, ID extends Serializable> implements GenericDAO<T,
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
-    
+
 }

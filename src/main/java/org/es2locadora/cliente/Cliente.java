@@ -7,11 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Cliente {
 
     @Id
@@ -20,7 +24,11 @@ public class Cliente {
     private Integer idCliente;
 
     @Column(name = "nome_cliente")
+
+    @NonNull
     private String nomeCliente;
+
+    @Column(name = "cpf", nullable = false, unique = true)
     private String cpf;
     private String telefone1;
     private String telefone2;
