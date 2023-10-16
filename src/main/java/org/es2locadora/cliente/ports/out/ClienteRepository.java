@@ -6,10 +6,10 @@ import org.es2locadora.cliente.Cliente;
 
 public interface ClienteRepository {
     List<Cliente> getAll();
-    
-    void create(Cliente cliente);
-    
+
     Cliente findByCpf(String cpf);
 
-    List<Cliente> findByName(String nome);
+    void create(Cliente cliente);
+
+    List<Cliente> findByNome(String nome);
 }

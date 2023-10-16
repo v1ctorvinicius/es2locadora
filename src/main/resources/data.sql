@@ -1,4 +1,5 @@
-INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Ana Santos', 'ana@example.com', '44444444444');
+INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Ana Santos', 'anasantos@example.com', '44444444444');
+INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Ana Santos', 'anasantos@email.com', '44444444445');
 INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('João Silva', 'joao@example.com', '55555555555');
 INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Maria Souza', 'maria@example.com', '66666666666');
 INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Lucas Oliveira', 'lucas@example.com', '77777777777');

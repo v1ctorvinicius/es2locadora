@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface ClienteUseCases {
     Cliente buscarPorCpf(String cpf);
+
     Cliente cadastrarCliente(Cliente cliente);
 
-//    List<Cliente> buscarPorNome(String nome);
+    List<Cliente> buscarPeloNome(String nome);
 
 }

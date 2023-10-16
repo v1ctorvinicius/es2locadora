@@ -22,25 +22,22 @@ public class GenericDAOAdapter<T, ID extends Serializable> implements GenericDAO
 
     @Override
     public T findById(ID id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        return manager.find(entityClass, id);
     }
 
     @Override
     public void save(T entity) {
-        manager.persist(entity);        
+        manager.persist(entity);
     }
 
     @Override
     public void update(T entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        manager.merge(entity);
     }
 
     @Override
     public void delete(T entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        manager.remove(entity);
     }
 
 }
