@@ -9,16 +9,16 @@ public class AluguelTest {
 
     @Test
     public void naoDeveInserirUmPagamentoComValorPagoMenorQueOValorDoAluguel() {
-        
+
     }
 
     @Test
     public void deveCalcularValorASerPagoDePagamentoVencido() {
-        
+
     }
 
     @Test
     public void deveInserirSemMultaUmPagementoNaoVencido() {
-        
+
     }
 }

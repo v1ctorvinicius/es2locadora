@@ -29,6 +29,7 @@ public class Cliente {
     private String nomeCliente;
 
     @Column(name = "cpf", nullable = false, unique = true)
+    @NonNull
     private String cpf;
     private String telefone1;
     private String telefone2;
@@ -36,4 +37,11 @@ public class Cliente {
 
     @Column(name = "dt_nascimento")
     private LocalDate dtNascimento;
+
+    public void setCpf(String cpf) {
+        if (cpf.length() < 11) {
+            throw new IllegalArgumentException("Cpf invalido");
+        }
+        this.cpf = cpf;
+    }
 }

@@ -10,4 +10,6 @@ public interface ClienteRepository {
     void create(Cliente cliente);
     
     Cliente findByCpf(String cpf);
+
+    List<Cliente> findByName(String nome);
 }

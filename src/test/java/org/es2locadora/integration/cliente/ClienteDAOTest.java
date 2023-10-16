@@ -30,14 +30,14 @@ public class ClienteDAOTest {
     }
 
     @BeforeEach
-    public void before() {
+    public void beforeEach() {
         manager = factory.createEntityManager();
         manager.getTransaction().begin();
         testRepo = new GenericDAOAdapter<>(manager, Cliente.class);
     }
 
     @AfterEach
-    public void after() {
+    public void afterEach() {
         manager.getTransaction().rollback();
     }
 
@@ -54,7 +54,7 @@ public class ClienteDAOTest {
 
     @Test
     public void deveSalvarUmClienteValido() {
-        Integer numAntesDeSalvar = testRepo.findAll().size();
+        int numAntesDeSalvar = testRepo.findAll().size();
         Cliente novoCliente = ClienteBuilder.novoCliente().comNome("Fulano Santos").comCpf("12345678910").build();
         testRepo.save(novoCliente);
         Assertions.assertEquals(testRepo.findAll().size(), numAntesDeSalvar + 1);
@@ -79,19 +79,13 @@ public class ClienteDAOTest {
     }
 
     @Test
-    public void naoDeveSalvarUmClienteComCPFInvalido() {
-
-    }
-
-    @Test
     public void deveEncontrarUmClientePeloNome() {
-
+//        List<Cliente> clientes = testRepo.findAll();
     }
 
     @Test
     public void deveEncontrarUmClientePeloCPF() {
-
-        // List<Cliente> clientes = testRepo.findAll();
+//         List<Cliente> clientes = testRepo.findAll();
     }
 
 }

@@ -30,4 +30,9 @@ public class ClienteRepositoryAdapter implements ClienteRepository {
             .getSingleResult();
     }
 
+    @Override
+    public List<Cliente> findByName(String nome) {
+        return this.em.createQuery("from Cliente c where c.nomeCliente = :nome", Cliente.class).setParameter("nome", nome).getResultList();
+    }
+
 }

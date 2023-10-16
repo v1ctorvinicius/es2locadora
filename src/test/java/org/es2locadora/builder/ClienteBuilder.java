@@ -12,7 +12,6 @@ public class ClienteBuilder {
     public static ClienteBuilder novoCliente() {
         ClienteBuilder builder = new ClienteBuilder();
         builder.cliente = new Cliente();
-        builder.cliente.setNomeCliente("fulano");
         return builder;
     }
 
