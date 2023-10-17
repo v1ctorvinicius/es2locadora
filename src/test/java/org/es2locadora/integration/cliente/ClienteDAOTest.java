@@ -75,9 +75,7 @@ public class ClienteDAOTest {
         Cliente novoCliente = ClienteBuilder.novoCliente().comNome("Fulano Santos").comCpf("12345678910").build();
         testRepo.save(novoCliente);
         Cliente novoCliente2 = ClienteBuilder.novoCliente().comNome("Fulano da Silva").comCpf("12345678910").build();
-        Assertions.assertThrows(PersistenceException.class, () -> {
-            testRepo.save(novoCliente2);
-        }, "Devia lancar PersistenceException");
+        Assertions.assertThrows(PersistenceException.class, () -> testRepo.save(novoCliente2), "Devia lancar PersistenceException");
     }
 
     @Test
@@ -111,7 +109,7 @@ public class ClienteDAOTest {
     }
 
     @Test
-    public void deveDeletarUmCliente() {
+    public void deveDeletarUmClienteValido() {
         int numAntesDeDeletar = testRepo.findAll().size();
         testRepo.delete(testRepo.findById(1L));
         Assertions.assertEquals(numAntesDeDeletar - 1, testRepo.findAll().size());

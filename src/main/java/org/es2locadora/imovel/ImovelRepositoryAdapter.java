@@ -1,16 +1,12 @@
 package org.es2locadora.imovel;
 
 
-import javax.persistence.EntityManager;
-
-import org.es2locadora.aluguel.ports.out.AluguelRepository;
-
 import lombok.RequiredArgsConstructor;
+import org.es2locadora.imovel.ports.out.ImovelRepository;
 
 @RequiredArgsConstructor
-public class ImovelRepositoryAdapter implements AluguelRepository {
+public class ImovelRepositoryAdapter implements ImovelRepository {
 
-    private final EntityManager em;
 
 
 }

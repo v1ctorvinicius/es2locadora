@@ -19,7 +19,7 @@ public class Imovel {
     @Column(name = "id_imovel", unique = true)
     private Long idImovel;
 
-    @Column(name = "tipo_imovel", length = 100, unique = true)
+    @Column(name = "tipo_imovel", length = 100)
     private String tipoImovel;
 
     private String endereco;

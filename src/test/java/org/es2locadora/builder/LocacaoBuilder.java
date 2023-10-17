@@ -11,7 +11,7 @@ public class LocacaoBuilder {
 
     private LocacaoBuilder() {}
 
-    public static LocacaoBuilder novoAluguel() {
+    public static LocacaoBuilder novaLocacao() {
         LocacaoBuilder builder = new LocacaoBuilder();
         builder.locacao = new Locacao();
         quantidade++;

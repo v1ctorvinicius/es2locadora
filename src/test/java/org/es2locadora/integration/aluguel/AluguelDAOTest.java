@@ -9,14 +9,11 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
 import org.es2locadora.aluguel.Aluguel;
-import org.es2locadora.aluguel.AluguelRepositoryAdapter;
-import org.es2locadora.aluguel.ports.out.AluguelRepository;
 import org.es2locadora.builder.AluguelBuilder;
 import org.es2locadora.dao.GenericDAO;
 import org.es2locadora.dao.GenericDAOAdapter;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AssertionFailureBuilder;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,7 +24,6 @@ public class AluguelDAOTest {
     private static EntityManagerFactory factory;
     private EntityManager manager;
     private GenericDAO<Aluguel, Long> testRepo;
-    private AluguelRepository aluguelRepo;
 
     @BeforeAll
     public static void setup() {
@@ -39,7 +35,6 @@ public class AluguelDAOTest {
         this.manager = factory.createEntityManager();
         this.manager.getTransaction().begin();
         this.testRepo = new GenericDAOAdapter<>(manager, Aluguel.class);
-        this.aluguelRepo = new AluguelRepositoryAdapter(manager);
     }
 
     @AfterEach
