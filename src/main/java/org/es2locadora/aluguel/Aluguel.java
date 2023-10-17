@@ -17,8 +17,7 @@ import lombok.NoArgsConstructor;
 public class Aluguel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_locacao")
+    @Column(name = "id_locacao", unique = true)
     private Long idLocacao;
 
     @Column(name = "data_vencimento")

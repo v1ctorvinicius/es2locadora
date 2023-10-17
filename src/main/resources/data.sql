@@ -24,3 +24,14 @@ INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Nicolas Gonçalves', 'ni
 INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Lorena Carvalho', 'lorena@example.com', '00000000004');
 INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Rafaela Fernandes', 'rafaela@example.com', '00000000005');
 INSERT INTO Cliente (nome_cliente, email, cpf) VALUES ('Gustavo Ribeiro', 'gustavo@example.com', '00000000006');
+
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (1, '2023-11-10', 400, null, "observacao 1");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (2, '2023-11-11', 500, null, "observacao 2");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (3, '2023-11-12', 600, null, "observacao 3");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (4, '2023-11-13', 700, null, "observacao 4");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (5, '2023-11-14', 800, null, "observacao 5");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (6, '2023-11-15', 900, null, "observacao 6");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (7, '2023-11-16', 1000, null, "observacao 7");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (8, '2023-11-17', 1100, null, "observacao 8");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (9, '2023-11-18', 1200, null, "observacao 9");
+INSERT INTO Aluguel (id_locacao, data_vencimento, valor_pago, data_pagamento, obs) VALUES (10, '2023-11-19', 1300, null, "observacao 10");

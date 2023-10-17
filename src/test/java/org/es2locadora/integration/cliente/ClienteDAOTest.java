@@ -56,7 +56,7 @@ public class ClienteDAOTest {
     @Test
     public void deveTrazerTodosOsClientes() {
         List<Cliente> clientes = testRepo.findAll();
-        Assertions.assertEquals(clientes.size(), 26);
+        Assertions.assertEquals(26, clientes.size());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class ClienteDAOTest {
                 .comDtNascimento(LocalDate.now()).build();
 
         testRepo.save(novoCliente);
-        Assertions.assertEquals(testRepo.findAll().size(), numAntesDeSalvar + 1);
+        Assertions.assertEquals(numAntesDeSalvar + 1, testRepo.findAll().size());
     }
 
     @Test
@@ -101,7 +101,7 @@ public class ClienteDAOTest {
     }
 
     @Test
-    public void deveAtualizarUmCliente() {
+    public void deveAtualizarUmClienteValido() {
         Cliente cliente = testRepo.findById(1L);
         Assertions.assertEquals(cliente.getNomeCliente(), "Ana Santos");
         cliente.setNomeCliente("Victor Vinicius");
@@ -112,8 +112,9 @@ public class ClienteDAOTest {
 
     @Test
     public void deveDeletarUmCliente() {
+        int numAntesDeDeletar = testRepo.findAll().size();
         testRepo.delete(testRepo.findById(1L));
-        Assertions.assertEquals(testRepo.findAll().size(), 25);
+        Assertions.assertEquals(numAntesDeDeletar - 1, testRepo.findAll().size());
     }
 
 }

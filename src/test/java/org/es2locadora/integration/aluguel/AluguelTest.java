@@ -3,13 +3,10 @@ package org.es2locadora.integration.aluguel;
 import org.junit.jupiter.api.Test;
 
 public class AluguelTest {
-    @Test
-    public void deveInserirUmPagamentoValido() {
-        
-    }
+    
 
     @Test
-    public void naoDeveInserirUmPagamentoComValorPagoMenorQueOValorDoAluguel() {
+    public void deveLancarExcecaoCasoUmPagamentoComValorPagoMenorQueOValorDoAluguelTenteSerInserido() {
 
     }
 
@@ -19,7 +16,19 @@ public class AluguelTest {
     }
 
     @Test
-    public void deveInserirSemMultaUmPagementoNaoVencido() {
+    public void deveInserirSemMultaUmPagamentoNaoVencido() {
+
+    }
+
+    @Test
+    public void deveRecuperarTodosOsALugueisPagosDoCLiente() {
+        // List<Aluguel> alugueisPagos = aluguelRepo.findAlugueisPagosByClienteId(1L);
+        
+
+    }
+
+    @Test
+    public void deveRecuperarTodosOsAlugueisPagosComAtraso() {
 
     }
 }
