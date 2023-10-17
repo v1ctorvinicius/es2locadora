@@ -6,7 +6,7 @@ public class ClienteTest {
 
     @Test
     public void deveRecuperarTodosOsALugueisPagosDoCLiente() {
-
+        
     }
 
     @Test
