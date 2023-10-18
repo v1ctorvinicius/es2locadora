@@ -25,7 +25,7 @@ public class ClienteDAOTest {
 
     private static EntityManagerFactory factory;
     private EntityManager manager;
-    private GenericDAO<Cliente, Long> testRepo;
+    private GenericDAO<Cliente, Long> daoTest;
     private ClienteRepository clienteRepo;
 
     @BeforeAll
@@ -37,7 +37,7 @@ public class ClienteDAOTest {
     public void beforeEach() {
         this.manager = factory.createEntityManager();
         this.manager.getTransaction().begin();
-        this.testRepo = new GenericDAOAdapter<>(manager, Cliente.class);
+        this.daoTest = new GenericDAOAdapter<>(manager, Cliente.class);
         this.clienteRepo = new ClienteRepositoryAdapter(manager);
     }
 
@@ -55,27 +55,27 @@ public class ClienteDAOTest {
 
     @Test
     public void deveTrazerTodosOsClientes() {
-        List<Cliente> clientes = testRepo.findAll();
+        List<Cliente> clientes = daoTest.findAll();
         Assertions.assertEquals(26, clientes.size());
     }
 
     @Test
     public void deveSalvarUmClienteValido() {
-        int numAntesDeSalvar = testRepo.findAll().size();
+        int numAntesDeSalvar = daoTest.findAll().size();
         Cliente novoCliente = ClienteBuilder.novoCliente().comNome("Fulano Santos").comCpf("12345678910")
                 .comTelefone1("12345678910").comTelefone2("12345678910").comEmail("fulanosantos@email.com")
                 .comDtNascimento(LocalDate.now()).build();
 
-        testRepo.save(novoCliente);
-        Assertions.assertEquals(numAntesDeSalvar + 1, testRepo.findAll().size());
+        daoTest.save(novoCliente);
+        Assertions.assertEquals(numAntesDeSalvar + 1, daoTest.findAll().size());
     }
 
     @Test
     public void naoDeveSalvarUmClienteComCPFRepetido() {
         Cliente novoCliente = ClienteBuilder.novoCliente().comNome("Fulano Santos").comCpf("12345678910").build();
-        testRepo.save(novoCliente);
+        daoTest.save(novoCliente);
         Cliente novoCliente2 = ClienteBuilder.novoCliente().comNome("Fulano da Silva").comCpf("12345678910").build();
-        Assertions.assertThrows(PersistenceException.class, () -> testRepo.save(novoCliente2), "Devia lancar PersistenceException");
+        Assertions.assertThrows(PersistenceException.class, () -> daoTest.save(novoCliente2), "Devia lancar PersistenceException");
     }
 
     @Test
@@ -87,32 +87,32 @@ public class ClienteDAOTest {
     @Test
     public void deveEncontrarUmClientePeloCPF() {
         Cliente novoCliente = ClienteBuilder.novoCliente().comNome("Victor Vinicius").comCpf("11122233344").build();
-        testRepo.save(novoCliente);
+        daoTest.save(novoCliente);
         Cliente cliente = this.clienteRepo.findByCpf("11122233344");
         Assertions.assertEquals(novoCliente, cliente);
     }
 
     @Test
     public void deveEncontrarUmClientePeloId() {
-        Cliente cliente = testRepo.findById(1L);
+        Cliente cliente = daoTest.findById(1L);
         Assertions.assertEquals(cliente.getNomeCliente(), "Ana Santos");
     }
 
     @Test
     public void deveAtualizarUmClienteValido() {
-        Cliente cliente = testRepo.findById(1L);
+        Cliente cliente = daoTest.findById(1L);
         Assertions.assertEquals(cliente.getNomeCliente(), "Ana Santos");
         cliente.setNomeCliente("Victor Vinicius");
-        testRepo.update(cliente);
-        cliente = testRepo.findById(1L);
+        daoTest.update(cliente);
+        cliente = daoTest.findById(1L);
         Assertions.assertEquals(cliente.getNomeCliente(), "Victor Vinicius");
     }
 
     @Test
     public void deveDeletarUmClienteValido() {
-        int numAntesDeDeletar = testRepo.findAll().size();
-        testRepo.delete(testRepo.findById(1L));
-        Assertions.assertEquals(numAntesDeDeletar - 1, testRepo.findAll().size());
+        int numAntesDeDeletar = daoTest.findAll().size();
+        daoTest.delete(daoTest.findById(1L));
+        Assertions.assertEquals(numAntesDeDeletar - 1, daoTest.findAll().size());
     }
 
 }

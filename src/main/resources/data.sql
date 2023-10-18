@@ -42,25 +42,17 @@ INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, b
 INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Apartamento', '101 Avenida Exemplo', 'Bairro D', '10101010', 65.5, 1, 1, 0, 1, 900.0, 'Ótima localização');
 INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Casa', '222 Rua da Demonstração', 'Bairro E', '22222222', 180.0, 3, 2, 1, 2, 1800.0, 'Piscina e área de churrasco');
 INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Apartamento', '123 Rua das Flores', 'Centro', '12345678', 85.5, 2, 1, 1, 1, 1500.0, 'Bem localizado no centro da cidade');
-INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Casa', '456 Avenida dos Sonhos', 'Bairro F', '54321000', 210.0, 4, 3, 2, 2, 2800.0, 'Ampla casa com quintal e piscina');
-INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Apartamento', '789 Rua da Esperança', 'Bairro G', '98765432', 95.5, 2, 2, 1, 1, 1700.0, 'Vista panorâmica da cidade');
-INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Casa', '101 Avenida das Árvores', 'Bairro H', '10102020', 180.5, 3, 2, 1, 2, 2200.0, 'Lindo jardim e espaço para churrasco');
-INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Apartamento', '222 Rua dos Pássaros', 'Bairro I', '22223333', 75.0, 2, 1, 0, 1, 1300.0, 'Próximo a parques e escolas');
+INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Casa', '456 Avenida dos Sonhos', 'Centro', '54321000', 210.0, 4, 3, 2, 2, 2800.0, 'Ampla casa com quintal e piscina');
+INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Apartamento', '789 Rua da Esperança', 'Centro', '98765432', 95.5, 2, 2, 1, 1, 1700.0, 'Vista panorâmica da cidade');
+INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Casa', '101 Avenida das Árvores', 'Centro', '10102020', 180.5, 3, 2, 1, 2, 2200.0, 'Lindo jardim e espaço para churrasco');
+INSERT INTO Imovel (tipo_imovel, endereco, bairro, cep, metragem, dormitorios, banheiros, suites, vagas_garagem, valor_aluguel_sugerido, obs) VALUES ('Apartamento', '222 Rua dos Pássaros', 'Centro', '22223333', 75.0, 2, 1, 0, 1, 1300.0, 'Próximo a parques e escolas');
 
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (1, 1500.0, 0.03, 5, '2023-10-01', '2024-09-30', true, 'Contrato de locação em andamento');
-
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (2, 1200.0, 0.02, 10, '2023-11-01', '2024-10-31', true, 'Primeira locação de um novo inquilino');
-
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (3, 1800.0, 0.03, 15, '2023-09-15', '2024-09-14', true, 'Locação em um imóvel maior');
-
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (4, 950.0, 0.02, 20, '2023-08-01', '2024-07-31', true, 'Início de contrato com desconto no aluguel');
-
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (5, 2100.0, 0.03, 1, '2023-10-15', '2024-10-14', true, 'Locação em área residencial tranquila');
-
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (6, 1350.0, 0.02, 5, '2023-12-01', '2024-11-30', false, 'Início de contrato anual renovável');
-
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (7, 950.0, 0.02, 10, '2023-11-15', '2024-11-14', false, 'Locação temporária durante a temporada de férias');
-
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (8, 1750.0, 0.03, 25, '2023-09-01', '2024-08-31', false, 'Locação em prédio com serviços de concierge');
-
-INSERT INTO Locacao (id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (9, 1450.0, 0.02, 5, '2023-10-01', '2024-09-30', false, 'Locação em um bairro histórico');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (1, 1, 1500.0, 0.03, 5, '2023-10-01', '2024-09-30', true, 'Contrato de locação em andamento');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (2, 2, 1200.0, 0.02, 10, '2023-11-01', '2024-10-31', true, 'Primeira locação de um novo inquilino');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (3, 3, 1800.0, 0.03, 15, '2023-09-15', '2024-09-14', true, 'Locação em um imóvel maior');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (4, 4, 950.0, 0.02, 20, '2023-08-01', '2024-07-31', true, 'Início de contrato com desconto no aluguel');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (5, 5, 2100.0, 0.03, 1, '2023-10-15', '2024-10-14', true, 'Locação em área residencial tranquila');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (6, 6, 1350.0, 0.02, 5, '2023-12-01', '2024-11-30', false, 'Início de contrato anual renovável');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (7, 7, 950.0, 0.02, 10, '2023-11-15', '2024-11-14', false, 'Locação temporária durante a temporada de férias');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (8, 8, 1750.0, 0.03, 25, '2023-09-01', '2024-08-31', false, 'Locação em prédio com serviços de concierge');
+INSERT INTO Locacao (id_imovel, id_inquilino, valor_aluguel, percentual_multa, dia_vencimento, data_inicio, data_fim, ativo, obs) VALUES (9, 9, 1450.0, 0.02, 5, '2023-10-01', '2024-09-30', false, 'Locação em um bairro histórico');

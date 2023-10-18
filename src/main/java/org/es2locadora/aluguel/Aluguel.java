@@ -31,4 +31,8 @@ public class Aluguel {
 
     @Column(name = "obs")
     private String obs;
+
+    public boolean estaPago(){
+        return dataPagamento != null && valorPago != null && valorPago > 0  && dataPagamento.isAfter(LocalDate.now());
+    }
 }

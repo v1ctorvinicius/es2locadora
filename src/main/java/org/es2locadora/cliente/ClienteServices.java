@@ -8,7 +8,7 @@ import org.es2locadora.cliente.ports.out.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class ClienteService implements ClienteUseCases {
+public class ClienteServices implements ClienteUseCases {
 
     private final ClienteRepository repo;
 
